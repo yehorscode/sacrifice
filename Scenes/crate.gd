@@ -5,4 +5,4 @@ func _ready():
 
 func _process(delta: float) -> void:
 	# velocity damping so it stops when not pushed
-	linear_velocity *= 0.95
+	linear_velocity *= 0.80

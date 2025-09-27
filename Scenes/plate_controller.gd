@@ -4,15 +4,12 @@ extends Node
 
 signal crate_placed
 signal crate_removed
-signal box_entered
-signal box_exited
 
 func _ready():
 	for plate in get_tree().get_nodes_in_group("plates"):
 		plate.connect("box_entered", Callable(self, "_on_crate_placed"))
 		plate.connect("box_exited", Callable(self, "_on_crate_removed"))
-		print("[CONTROLLER] Connected to plate: ",plate.name)
-	print("[CONTROLLER] Ready: Connected to all plates")
+	print("[CONTROLLER] Connected to all plates")
 
 func _on_crate_placed():
 	completed_crates += 1
