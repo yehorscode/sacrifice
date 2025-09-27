@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scenes/crate.gd" id="1_77l3o"]
 [ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="2_77l3o"]
+[ext_resource type="Texture2D" uid="uid://bmob314u7ce7r" path="res://Images/Torch.png" id="3_qusok"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_77l3o"]
 friction = 26.4
@@ -23,6 +24,35 @@ func _process(delta: float) -> void:
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77l3o"]
 size = Vector2(32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7j5pf"]
+atlas = ExtResource("3_qusok")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro56c"]
+atlas = ExtResource("3_qusok")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4ict"]
+atlas = ExtResource("3_qusok")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bl8y8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7j5pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro56c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4ict")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Stage0Assets" type="Node2D"]
 
 [node name="Crate" type="RigidBody2D" parent="."]
@@ -38,3 +68,9 @@ script = SubResource("GDScript_77l3o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
 shape = SubResource("RectangleShape2D_77l3o")
 debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
+
+[node name="torch" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(256, 260)
+sprite_frames = SubResource("SpriteFrames_bl8y8")
+frame_progress = 0.71696025
