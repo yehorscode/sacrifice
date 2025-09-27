@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dsujvhaa1mchs"]
+[gd_scene load_steps=33 format=4 uid="uid://dsujvhaa1mchs"]
 
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_ial8x"]
 [ext_resource type="Texture2D" uid="uid://v21mur71yxta" path="res://Images/brick_tile.png" id="2_adl2h"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dsbtjnj1u8vlf" path="res://Scripts/diezone.gd" id="6_adl2h"]
 [ext_resource type="Script" path="res://Scripts/finish.gd" id="8_j221e"]
 [ext_resource type="Texture2D" uid="uid://dxmkoq2gfwoq1" path="res://Images/New Piskel (1).png" id="9_vy6i2"]
+[ext_resource type="Texture2D" uid="uid://b053da2e03efc" path="res://Images/sword.png" id="10_wp4it"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wp4it"]
 texture = ExtResource("1_ial8x")
@@ -101,6 +102,9 @@ size = Vector2(348, 110)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfjjj"]
 size = Vector2(20, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2yki"]
+size = Vector2(11.455025, 9.198425)
 
 [node name="Stage1" type="Node2D"]
 
@@ -201,6 +205,20 @@ texture_filter = 1
 position = Vector2(2.500001, -5.500001)
 scale = Vector2(0.515625, 0.515625)
 texture = ExtResource("9_vy6i2")
+
+[node name="Sprite2D5" type="StaticBody2D" parent="Sprite2D2"]
+position = Vector2(-18.248173, 18.248177)
+scale = Vector2(1.1001475, 1.1001475)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/Sprite2D5"]
+position = Vector2(1.8518505, -5.789673)
+shape = SubResource("RectangleShape2D_g2yki")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D2/Sprite2D5"]
+texture_filter = 1
+position = Vector2(2.500001, -5.500001)
+scale = Vector2(0.515625, 0.515625)
+texture = ExtResource("10_wp4it")
 
 [node name="Sprite2D3" type="StaticBody2D" parent="."]
 position = Vector2(394, -504.00003)
