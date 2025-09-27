@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var grid_size: int = 9
-@export var move_speed: float = 600
+@export var move_speed: float = 200
 
 @onready var sprite = $Sprite2D
 
@@ -44,12 +44,20 @@ func handle_input():
 		sprite.texture = sprite_right
 
 	if dir != Vector2.ZERO:
-		# Check if the next tile is free before moving
 		var motion = dir * grid_size
 		var collision = move_and_collide(motion)
+
 		if collision == null:
+			# No collision, move normally
 			target_position = position + motion
 			moving = true
+		else:
+			# If we collided with a box, push it
+			var collider = collision.get_collider()
+			if collider.is_in_group("box"):
+				collider.apply_impulse(Vector2.ZERO, dir * 200)  # Adjust force as needed
+				target_position = position + motion
+				moving = true
 
 func die():
 	get_tree().call_deferred("reload_current_scene")
