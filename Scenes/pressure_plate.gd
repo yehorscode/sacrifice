@@ -6,7 +6,8 @@ signal box_exited
 func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	connect("body_exited", Callable(self, "_on_body_exited"))
-	print("[PLATE] Ready: signals connected")
+	add_to_group("plates")
+	print("[PLATE] Ready: loaded")
 
 func _on_body_entered(body):
 	if body.is_in_group("box"):
