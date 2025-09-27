@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://biq3foop4pvt"]
+[gd_scene load_steps=13 format=3 uid="uid://biq3foop4pvt"]
 
 [ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scenes/crate.gd" id="1_77l3o"]
 [ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="2_77l3o"]
 [ext_resource type="Texture2D" uid="uid://bmob314u7ce7r" path="res://Images/Torch.png" id="3_qusok"]
+[ext_resource type="Texture2D" uid="uid://dxmkoq2gfwoq1" path="res://Images/New Piskel (1).png" id="4_bl8y8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_77l3o"]
 friction = 26.4
@@ -53,8 +54,8 @@ animations = [{
 "speed": 0.5
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bl8y8"]
-size = Vector2(7.70958, 9.600369)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3y11"]
+size = Vector2(20, 29)
 
 [node name="Stage0Assets" type="Node2D"]
 
@@ -79,5 +80,18 @@ scale = Vector2(-7.5309916, 19.587217)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Torch"]
 texture_filter = 1
 position = Vector2(256, 260)
-sprite_frames = SubResource("SpriteFrames_bl8y8")
+sprite_frames = SubResource("SpriteFrames_qusok")
 frame_progress = 0.16847
+
+[node name="Sprite2D" type="StaticBody2D" parent="."]
+position = Vector2(141, 151)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+position = Vector2(3, -3.5)
+shape = SubResource("RectangleShape2D_r3y11")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+texture_filter = 1
+position = Vector2(2.500001, -5.500001)
+scale = Vector2(0.515625, 0.515625)
+texture = ExtResource("4_bl8y8")
