@@ -1,23 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://djs26gx3rwm34"]
+[gd_scene load_steps=9 format=3 uid="uid://djs26gx3rwm34"]
 
 [ext_resource type="Script" uid="uid://cletv57cm5sle" path="res://character_body_2d.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="3_0hol4"]
 [ext_resource type="Texture2D" uid="uid://v21mur71yxta" path="res://Images/brick_tile.png" id="3_epypp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(126, 127)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
-texture = ExtResource("3_epypp")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
+texture = ExtResource("3_0hol4")
+texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdubu"]
+texture = ExtResource("3_epypp")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_q6r6c"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_0hol4")
+sources/1 = SubResource("TileSetAtlasSource_q6r6c")
+sources/2 = SubResource("TileSetAtlasSource_kdubu")
 
 [node name="Node2D" type="Node2D"]
 
@@ -33,5 +38,5 @@ position = Vector2(510, 242.5)
 shape = SubResource("RectangleShape2D_epypp")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(576, 324)
+position = Vector2(575, 323)
 tile_set = SubResource("TileSet_q6r6c")
