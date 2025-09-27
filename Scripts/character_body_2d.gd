@@ -13,7 +13,8 @@ var sprite_right = load("res://Images/Character/Right.png")
 
 var target_position: Vector2
 var moving: bool = false
-var last_dir: Vector2 = Vector2.ZERO 
+var last_dir_x: Vector2 = Vector2.ZERO
+var last_dir_y: Vector2 = Vector2.ZERO 
 
 func _ready():
 	target_position = position
@@ -27,22 +28,23 @@ func _physics_process(delta):
 		handle_input()
 
 func handle_input():
-	var dir = Vector2.ZERO
-
-	if Input.is_action_pressed("D_Right"):
-		dir = Vector2.RIGHT
-		sprite.texture = sprite_right
-	elif Input.is_action_pressed("A_Left"):
-		dir = Vector2.LEFT
-		sprite.texture = sprite_left
-	elif Input.is_action_pressed("W_Foward"):
-		dir = Vector2.UP
+	var dir_x = Vector2.ZERO
+	var dir_y = Vector2.ZERO
+	if Input.is_action_pressed("W_Foward"):
+		dir_y = Vector2.UP
 		sprite.texture = sprite_up
 	elif Input.is_action_pressed("S_Backwards"):
-		dir = Vector2.DOWN
+		dir_y = Vector2.DOWN
 		sprite.texture = sprite_down
+	if Input.is_action_pressed("D_Right"):
+		dir_x = Vector2.RIGHT
+		sprite.texture = sprite_right
+	elif Input.is_action_pressed("A_Left"):
+		dir_x = Vector2.LEFT
+		sprite.texture = sprite_left
 
-	if dir != Vector2.ZERO:
-		last_dir = dir
-		target_position = position + dir * grid_size
+	if dir_x != Vector2.ZERO or dir_y != Vector2.ZERO:
+		last_dir_x = dir_x
+		last_dir_y = dir_y
+		target_position = position + (dir_x * grid_size) + (dir_y * grid_size)
 		moving = true
