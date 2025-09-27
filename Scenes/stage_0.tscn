@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://4jvih66khjds"]
+[gd_scene load_steps=36 format=4 uid="uid://4jvih66khjds"]
 
 [ext_resource type="Texture2D" uid="uid://cmg4y4hxlk4ma" path="res://Images/green.png" id="1_ih5ye"]
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_oxfjx"]
@@ -350,7 +350,6 @@ position = Vector2(-752, 487)
 scale = Vector2(2.6875, 2.6875)
 sprite_frames = SubResource("SpriteFrames_rr34s")
 frame_progress = 0.093717985
-script = ExtResource("7_lt8ko")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-759, 499)
