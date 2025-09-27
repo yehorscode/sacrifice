@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cmg4y4hxlk4ma" path="res://Images/green.png" id="4_sfwwm"]
 [ext_resource type="Texture2D" uid="uid://bobtve1te8p4f" path="res://Images/Character/Right.png" id="5_vy6i2"]
 [ext_resource type="Script" uid="uid://dsbtjnj1u8vlf" path="res://Scripts/diezone.gd" id="6_adl2h"]
-[ext_resource type="Script" uid="uid://dajddtgy2jnpn" path="res://Scripts/finish.gd" id="8_j221e"]
+[ext_resource type="Script" uid="uid://dajddtgy2jnpn" path="res://Scripts/stage_1/finish.gd" id="8_j221e"]
 [ext_resource type="Texture2D" uid="uid://dxmkoq2gfwoq1" path="res://Images/New Piskel (1).png" id="9_vy6i2"]
 [ext_resource type="Texture2D" uid="uid://b053da2e03efc" path="res://Images/sword.png" id="10_wp4it"]
 
@@ -123,8 +123,6 @@ tile_set = SubResource("TileSet_sfwwm")
 [node name="Player" type="CharacterBody2D" parent="."]
 disable_mode = 2
 script = ExtResource("4_j221e")
-grid_size = null
-move_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture_filter = 1

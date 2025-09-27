@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://pc5xhl2npcmd"]
+[gd_scene load_steps=19 format=4 uid="uid://pc5xhl2npcmd"]
 
+[ext_resource type="Texture2D" uid="uid://cmg4y4hxlk4ma" path="res://Images/green.png" id="1_uxocw"]
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_wxne6"]
 [ext_resource type="Texture2D" uid="uid://v21mur71yxta" path="res://Images/brick_tile.png" id="2_j7yc3"]
 [ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="3_m6j64"]
@@ -9,6 +10,12 @@
 [ext_resource type="Script" uid="uid://ncjs8n3njiet" path="res://Scripts/dispensers/dispenser.gd" id="7_m6j64"]
 [ext_resource type="PackedScene" uid="uid://t25m8qexmwui" path="res://Scenes/arrow.tscn" id="8_i2od2"]
 [ext_resource type="AudioStream" uid="uid://dtfspwhgfttqe" path="res://Sounds/soundtrack_mono(1).wav" id="9_5wu1i"]
+[ext_resource type="Script" uid="uid://c07sry4hi0ups" path="res://Scripts/stage_2/finish.gd" id="11_wjg4a"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhyr0"]
+texture = ExtResource("1_uxocw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxocw"]
 texture = ExtResource("1_wxne6")
@@ -31,16 +38,20 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_uxocw")
 sources/2 = SubResource("TileSetAtlasSource_wjg4a")
 sources/3 = SubResource("TileSetAtlasSource_b16lr")
+sources/0 = SubResource("TileSetAtlasSource_uhyr0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5m3y"]
 size = Vector2(60.5, 86.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxocw"]
+size = Vector2(128, 62)
 
 [node name="Stage2" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
 scale = Vector2(2.001, 2)
-tile_map_data = PackedByteArray("AAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAD///T/AgAAAAAAAAD///X/AgAAAAAAAAD///b/AgAAAAAAAAD///f/AgAAAAAAAAD///j/AgAAAAAAAAD///n/AgAAAAAAAAD///r/AgAAAAAAAAD///v/AgAAAAAAAAD///z/AgAAAAAAAAD///3/AgAAAAAAAAD///7/AgAAAAAAAAD/////AgAAAAAAAAAAAPT/AgAAAAAAAAAAAPX/AgAAAAAAAAAAAPb/AgAAAAAAAAAAAPf/AgAAAAAAAAAAAPj/AgAAAAAAAAAAAPn/AgAAAAAAAAAAAPr/AgAAAAAAAAAAAPv/AgAAAAAAAAAAAPz/AgAAAAAAAAAAAP3/AgAAAAAAAAAAAP7/AgAAAAAAAAAAAP//AgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAD///T/AgAAAAAAAAD///X/AgAAAAAAAAD///b/AgAAAAAAAAD///f/AgAAAAAAAAD///j/AgAAAAAAAAD///n/AgAAAAAAAAD///r/AgAAAAAAAAD///v/AgAAAAAAAAD///z/AgAAAAAAAAD///3/AgAAAAAAAAD///7/AgAAAAAAAAD/////AgAAAAAAAAAAAPT/AgAAAAAAAAAAAPX/AgAAAAAAAAAAAPb/AgAAAAAAAAAAAPf/AgAAAAAAAAAAAPj/AgAAAAAAAAAAAPn/AgAAAAAAAAAAAPr/AgAAAAAAAAAAAPv/AgAAAAAAAAAAAPz/AgAAAAAAAAAAAP3/AgAAAAAAAAAAAP7/AgAAAAAAAAAAAP//AgAAAAAAAAD+//n/AQAAAAAAAAD+//j/AQAAAAAAAAD+//f/AQAAAAAAAAD+//b/AQAAAAAAAAD+//X/AQAAAAAAAAD+//T/AQAAAAAAAAD+//r/AQAAAAAAAAD+//v/AQAAAAAAAAD+//z/AQAAAAAAAAD+//3/AQAAAAAAAAD+//7/AQAAAAAAAAD+////AQAAAAAAAAD+/wAAAQAAAAAAAAABAPT/AQAAAAAAAAABAPX/AQAAAAAAAAABAPb/AQAAAAAAAAABAPf/AQAAAAAAAAABAPj/AQAAAAAAAAABAPn/AQAAAAAAAAABAPr/AQAAAAAAAAABAPv/AQAAAAAAAAABAPz/AQAAAAAAAAABAP3/AQAAAAAAAAABAP7/AQAAAAAAAAABAP//AQAAAAAAAAABAAAAAQAAAAAAAAD+/wEAAQAAAAAAAAD+/wIAAQAAAAAAAAD//wIAAQAAAAAAAAAAAAIAAQAAAAAAAAABAAIAAQAAAAAAAAABAAEAAQAAAAAAAAD+//P/AQAAAAAAAAD+//L/AQAAAAAAAAD///L/AQAAAAAAAAD///P/AAAAAAAAAAAAAPP/AAAAAAAAAAABAPP/AQAAAAAAAAABAPL/AQAAAAAAAAAAAPL/AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_uhyr0")
 
 [node name="Player" type="CharacterBody2D" parent="."]
@@ -98,7 +109,7 @@ shoot_interval = 2.5
 
 [node name="Dispenser5" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-126.000015, -617)
+position = Vector2(-126.00001, -631)
 scale = Vector2(1.90625, 1.90625)
 texture = ExtResource("6_j7yc3")
 script = ExtResource("7_m6j64")
@@ -107,3 +118,17 @@ shoot_interval = 0.75
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_5wu1i")
+
+[node name="finish" type="Area2D" parent="."]
+script = ExtResource("11_wjg4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
+position = Vector2(0, -799)
+shape = SubResource("RectangleShape2D_uxocw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="finish"]
+
+[node name="ColorRect" type="ColorRect" parent="finish/CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
