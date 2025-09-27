@@ -50,7 +50,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 0.5
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bl8y8"]
@@ -78,10 +78,6 @@ scale = Vector2(-7.5309916, 19.587217)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Torch"]
 texture_filter = 1
-scale = Vector2(1, 0.47247916)
-sprite_frames = SubResource("SpriteFrames_qusok")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Torch"]
-position = Vector2(-1.5934067, 2.323155)
-scale = Vector2(1.65344, 1.1781547)
-shape = SubResource("RectangleShape2D_bl8y8")
+position = Vector2(256, 260)
+sprite_frames = SubResource("SpriteFrames_bl8y8")
+frame_progress = 0.16847
