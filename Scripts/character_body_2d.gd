@@ -28,13 +28,14 @@ func _physics_process(delta):
 		handle_input()
 
 func handle_input():
-	var dir = Vector2.ZERO
+	var dir_x = Vector2.ZERO
+	var dir_y = Vector2.ZERO
 
 	if Input.is_action_pressed("W_Foward"):
-		dir = Vector2.UP
+		dir_y = Vector2.UP
 		sprite.texture = sprite_up
 	elif Input.is_action_pressed("S_Backwards"):
-		dir = Vector2.DOWN
+		dir_y = Vector2.DOWN
 		sprite.texture = sprite_down
 	if Input.is_action_pressed("A_Left"):
 		dir_x = Vector2.LEFT
