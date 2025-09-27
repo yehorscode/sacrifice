@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://b7jr3pkcf34mq"]
+[gd_scene load_steps=28 format=4 uid="uid://b7jr3pkcf34mq"]
 
 [ext_resource type="Script" uid="uid://nhfbd6b5kkwr" path="res://Scripts/character_body_2d.gd" id="1_7tt7b"]
 [ext_resource type="Texture2D" uid="uid://bobtve1te8p4f" path="res://Images/Character/Right.png" id="2_e68fo"]
@@ -81,9 +81,8 @@ size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjgmc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsvr1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_00ihq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hc4d"]
+size = Vector2(129, 73)
 
 [node name="Stage3" type="Node2D"]
 
@@ -259,22 +258,33 @@ script = ExtResource("10_8hc4d")
 [node name="MusicController" parent="." instance=ExtResource("11_3pjs0")]
 
 [node name="DOOR" type="Node2D" parent="."]
+position = Vector2(989, -112)
 
 [node name="closed" type="Sprite2D" parent="DOOR"]
+visible = false
+position = Vector2(57, -15)
+scale = Vector2(2, 2)
+texture = ExtResource("5_8hc4d")
 
 [node name="open" type="Sprite2D" parent="DOOR"]
-visible = false
+position = Vector2(57, -15)
+scale = Vector2(2, 2)
+texture = ExtResource("6_3tp71")
 
 [node name="closed_hitbox" type="Area2D" parent="DOOR"]
+visible = false
+position = Vector2(57, -17)
+scale = Vector2(6.4, 12.239998)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DOOR/closed_hitbox"]
 shape = SubResource("RectangleShape2D_bjgmc")
 
-[node name="Area2D" type="Area2D" parent="DOOR"]
-visible = false
+[node name="open_hitbox" type="Area2D" parent="DOOR"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DOOR/Area2D"]
-shape = SubResource("RectangleShape2D_dsvr1")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DOOR/open_hitbox"]
+position = Vector2(56.5, 73.5)
+shape = SubResource("RectangleShape2D_8hc4d")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="DOOR/Area2D"]
-shape = SubResource("RectangleShape2D_00ihq")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DOOR/open_hitbox"]
+position = Vector2(57, -103)
+shape = SubResource("RectangleShape2D_8hc4d")
