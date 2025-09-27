@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://bvg7bis4ktp3a" path="res://Scripts/stage_0/pressure_plate.gd" id="8_3pjs0"]
 [ext_resource type="Texture2D" uid="uid://6w8vtml5srs7" path="res://Images/pressure_plate.png" id="9_s5vsy"]
 [ext_resource type="Script" uid="uid://ccmug0l1aqvjm" path="res://Scripts/stage_0/plate_controller.gd" id="10_8hc4d"]
-[ext_resource type="PackedScene" path="res://Scenes/music_controller.tscn" id="11_3pjs0"]
+[ext_resource type="PackedScene" uid="uid://djw2h32dxyh10" path="res://Scenes/music_controller.tscn" id="11_3pjs0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wt2ih"]
 texture = ExtResource("3_wt2ih")
@@ -101,7 +101,7 @@ script = ExtResource("1_7tt7b")
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture_filter = 1
 position = Vector2(0.7107147, 0.7107147)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(3.799, 3.799)
 texture = ExtResource("2_e68fo")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
