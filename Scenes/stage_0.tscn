@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://4jvih66khjds"]
+[gd_scene load_steps=31 format=4 uid="uid://4jvih66khjds"]
 
 [ext_resource type="Texture2D" uid="uid://cmg4y4hxlk4ma" path="res://Images/green.png" id="1_ih5ye"]
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_oxfjx"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cj2peaw7o0axf" path="res://Images/New Piskel (2).png" id="9_7r0vn"]
 [ext_resource type="Texture2D" uid="uid://6w8vtml5srs7" path="res://Images/pressure_plate.png" id="9_b4ict"]
 [ext_resource type="Script" uid="uid://ccmug0l1aqvjm" path="res://Scripts/stage_0/plate_controller.gd" id="10_b4ict"]
+[ext_resource type="PackedScene" uid="uid://djw2h32dxyh10" path="res://Scenes/music_controller.tscn" id="14_2shdo"]
 [ext_resource type="Texture2D" uid="uid://diyk2h76df48i" path="res://Images/Gate.png" id="14_2shdo"]
 [ext_resource type="Script" uid="uid://byv7oyoqeeebm" path="res://Scripts/finish_0.gd" id="16_ih5ye"]
 
@@ -370,6 +371,7 @@ script = ExtResource("7_lt8ko")
 position = Vector2(-759, 499)
 shape = SubResource("RectangleShape2D_2shdo")
 
+[node name="MusicController" parent="." instance=ExtResource("14_2shdo")]
 [node name="Gate" type="StaticBody2D" parent="."]
 texture_filter = 1
 position = Vector2(-1506, 411)

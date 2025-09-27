@@ -15,6 +15,10 @@ run/main_scene="uid://4jvih66khjds"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://Images/icon.svg"
 
+[autoload]
+
+MusicController="*res://Scripts/music_controller.gd"
+
 [input]
 
 W_Foward={
