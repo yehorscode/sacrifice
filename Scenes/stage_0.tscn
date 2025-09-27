@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://v21mur71yxta" path="res://Images/brick_tile.png" id="2_f8d1k"]
 [ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="3_vw4cj"]
 [ext_resource type="Script" uid="uid://nhfbd6b5kkwr" path="res://Scripts/character_body_2d.gd" id="4_7j5pf"]
-[ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scenes/crate.gd" id="6_f8d1k"]
+[ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scripts/stage_0/crate.gd" id="6_f8d1k"]
 [ext_resource type="Texture2D" uid="uid://d1wcvyblnnqtd" path="res://Images/Character/Left.png" id="6_rr34s"]
 [ext_resource type="Texture2D" uid="uid://bmob314u7ce7r" path="res://Images/Torch.png" id="7_vw4cj"]
-[ext_resource type="Script" uid="uid://bvg7bis4ktp3a" path="res://Scenes/pressure_plate.gd" id="8_ro56c"]
+[ext_resource type="Script" uid="uid://bvg7bis4ktp3a" path="res://Scripts/stage_0/pressure_plate.gd" id="8_ro56c"]
 [ext_resource type="Texture2D" uid="uid://6w8vtml5srs7" path="res://Images/pressure_plate.png" id="9_b4ict"]
-[ext_resource type="Script" uid="uid://ccmug0l1aqvjm" path="res://Scenes/plate_controller.gd" id="10_b4ict"]
+[ext_resource type="Script" uid="uid://ccmug0l1aqvjm" path="res://Scripts/stage_0/plate_controller.gd" id="10_b4ict"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tx0tn"]
 texture = ExtResource("1_oxfjx")

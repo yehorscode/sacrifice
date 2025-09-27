@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://damowd11qhhi8"]
 
-[ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scenes/crate.gd" id="1_77l3o"]
+[ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scripts/stage_0/crate.gd" id="1_77l3o"]
 [ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="2_77l3o"]
-[ext_resource type="Script" uid="uid://bvg7bis4ktp3a" path="res://Scenes/pressure_plate.gd" id="3_r3y11"]
+[ext_resource type="Script" uid="uid://bvg7bis4ktp3a" path="res://Scripts/stage_0/pressure_plate.gd" id="3_r3y11"]
 [ext_resource type="Texture2D" uid="uid://6w8vtml5srs7" path="res://Images/pressure_plate.png" id="4_qecmu"]
-[ext_resource type="Script" uid="uid://ccmug0l1aqvjm" path="res://Scenes/plate_controller.gd" id="5_nq6aa"]
+[ext_resource type="Script" uid="uid://ccmug0l1aqvjm" path="res://Scripts/stage_0/plate_controller.gd" id="5_nq6aa"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2fjcn"]
 friction = 26.4
