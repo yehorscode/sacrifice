@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://4jvih66khjds"]
+[gd_scene load_steps=30 format=4 uid="uid://4jvih66khjds"]
 
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_oxfjx"]
 [ext_resource type="Texture2D" uid="uid://v21mur71yxta" path="res://Images/brick_tile.png" id="2_f8d1k"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://nhfbd6b5kkwr" path="res://Scripts/character_body_2d.gd" id="4_7j5pf"]
 [ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scripts/stage_0/crate.gd" id="6_f8d1k"]
 [ext_resource type="Texture2D" uid="uid://d1wcvyblnnqtd" path="res://Images/Character/Left.png" id="6_rr34s"]
+[ext_resource type="Script" uid="uid://bafbwk3exufhc" path="res://Scenes/torch.gd" id="7_lt8ko"]
 [ext_resource type="Texture2D" uid="uid://bmob314u7ce7r" path="res://Images/Torch.png" id="7_vw4cj"]
 [ext_resource type="Script" uid="uid://bvg7bis4ktp3a" path="res://Scripts/stage_0/pressure_plate.gd" id="8_ro56c"]
 [ext_resource type="Texture2D" uid="uid://dxmkoq2gfwoq1" path="res://Images/New Piskel (1).png" id="8_rr34s"]
@@ -44,6 +45,32 @@ sources/3 = SubResource("TileSetAtlasSource_7r0vn")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(77, 87.25)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ro56c"]
+friction = 26.4
+
+[sub_resource type="GDScript" id="GDScript_b4ict"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rr34s"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r0vn"]
+size = Vector2(75, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt8ko"]
+size = Vector2(16.00529, 30.952377)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_7j5pf"]
 atlas = ExtResource("7_vw4cj")
 region = Rect2(0, 0, 32, 32)
@@ -73,31 +100,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ro56c"]
-friction = 26.4
-
-[sub_resource type="GDScript" id="GDScript_b4ict"]
-script/source = "extends Sprite2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rr34s"]
-size = Vector2(32, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r0vn"]
-size = Vector2(75, 54)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt8ko"]
-size = Vector2(11.455025, 9.198425)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2shdo"]
+size = Vector2(44, 62)
 
 [node name="Node2D" type="Node2D"]
 
@@ -125,12 +129,6 @@ position = Vector2(-3, 3)
 shape = SubResource("RectangleShape2D_epypp")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-
-[node name="torch" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(229, 233)
-scale = Vector2(2.6875, 2.6875)
-sprite_frames = SubResource("SpriteFrames_rr34s")
 
 [node name="Crate2" type="RigidBody2D" parent="."]
 z_index = 1
@@ -186,7 +184,7 @@ debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
 [node name="Crate5" type="RigidBody2D" parent="."]
 z_index = 1
 texture_filter = 1
-position = Vector2(-2122, 761)
+position = Vector2(-2148, 784)
 physics_material_override = SubResource("PhysicsMaterial_ro56c")
 lock_rotation = true
 script = ExtResource("6_f8d1k")
@@ -304,7 +302,7 @@ position = Vector2(-366, -272)
 scale = Vector2(7.5600014, 7.5600014)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D3"]
-position = Vector2(3, -3.5)
+position = Vector2(3, -4.100525)
 shape = SubResource("RectangleShape2D_lt8ko")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D3"]
@@ -314,11 +312,11 @@ scale = Vector2(0.515625, 0.515625)
 texture = ExtResource("8_rr34s")
 
 [node name="Sprite2D4" type="StaticBody2D" parent="."]
-position = Vector2(-581, 1051)
+position = Vector2(-570, 1138)
 scale = Vector2(7.5600014, 7.5600014)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D4"]
-position = Vector2(3, -3.5)
+position = Vector2(2.7116394, -0.19841003)
 shape = SubResource("RectangleShape2D_lt8ko")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D4"]
@@ -326,3 +324,32 @@ texture_filter = 1
 position = Vector2(2.500001, -5.500001)
 scale = Vector2(0.515625, 0.515625)
 texture = ExtResource("9_7r0vn")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="torch2" type="AnimatedSprite2D" parent="StaticBody2D"]
+texture_filter = 1
+position = Vector2(-752, 487)
+scale = Vector2(2.6875, 2.6875)
+sprite_frames = SubResource("SpriteFrames_rr34s")
+frame_progress = 0.093717985
+script = ExtResource("7_lt8ko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-759, 499)
+shape = SubResource("RectangleShape2D_2shdo")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-552, -1)
+
+[node name="torch2" type="AnimatedSprite2D" parent="StaticBody2D2"]
+texture_filter = 1
+position = Vector2(-752, 487)
+scale = Vector2(2.6875, 2.6875)
+sprite_frames = SubResource("SpriteFrames_rr34s")
+frame_progress = 0.33813328
+script = ExtResource("7_lt8ko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-759, 499)
+shape = SubResource("RectangleShape2D_2shdo")
