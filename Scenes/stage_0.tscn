@@ -1,11 +1,16 @@
-[gd_scene load_steps=20 format=4 uid="uid://c3llcj7nmrpov"]
+
+[gd_scene load_steps=15 format=4 uid="uid://4jvih66khjds"]
+
 
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_oxfjx"]
 [ext_resource type="Texture2D" uid="uid://v21mur71yxta" path="res://Images/brick_tile.png" id="2_f8d1k"]
 [ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="3_vw4cj"]
 [ext_resource type="Script" uid="uid://nhfbd6b5kkwr" path="res://Scripts/character_body_2d.gd" id="4_7j5pf"]
 [ext_resource type="Texture2D" uid="uid://djpmym2g2fmla" path="res://Images/Character/Right.png" id="5_ro56c"]
+
+[ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scenes/crate.gd" id="6_f8d1k"]
 [ext_resource type="Texture2D" uid="uid://bmob314u7ce7r" path="res://Images/Torch.png" id="7_vw4cj"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tx0tn"]
 texture = ExtResource("1_oxfjx")
@@ -35,26 +40,22 @@ size = Vector2(77, 106.5)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f8d1k"]
 friction = 26.4
 
-[sub_resource type="GDScript" id="GDScript_f8d1k"]
-script/source = "extends Node2D
+[sub_resource type="GDScript" id="GDScript_vw4cj"]
+script/source = "extends Sprite2D
 
-func _on_area_2d_body_entered(body):
-	if body.global_position.x < global_position.x:
-		print(\"z lewej\")
-	elif body.position.x > global_position.x:
-		print(\"z prawej\")
-	elif body.position.y > global_position.y:
-		print(\"z góry\")
 
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+	pass
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vw4cj"]
-size = Vector2(32, 32)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7j5pf"]
-size = Vector2(12, 23)
+size = Vector2(32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7j5pf"]
 atlas = ExtResource("7_vw4cj")
@@ -68,7 +69,7 @@ region = Rect2(32, 0, 32, 32)
 atlas = ExtResource("7_vw4cj")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ro56c"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rr34s"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -107,24 +108,21 @@ shape = SubResource("RectangleShape2D_epypp")
 
 [node name="Crate" type="RigidBody2D" parent="."]
 texture_filter = 1
-position = Vector2(66, -3)
+position = Vector2(68, 0)
 physics_material_override = SubResource("PhysicsMaterial_f8d1k")
-script = SubResource("GDScript_f8d1k")
+lock_rotation = true
+script = ExtResource("6_f8d1k")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crate"]
 texture = ExtResource("3_vw4cj")
+script = SubResource("GDScript_vw4cj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
-shape = SubResource("RectangleShape2D_vw4cj")
+shape = SubResource("RectangleShape2D_7j5pf")
 debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
 
-[node name="Torch" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Torch"]
-position = Vector2(254, 264.5)
-shape = SubResource("RectangleShape2D_7j5pf")
-
-[node name="torch" type="AnimatedSprite2D" parent="Torch"]
+[node name="torch" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(256, 260)
-sprite_frames = SubResource("SpriteFrames_ro56c")
+position = Vector2(229, 233)
+scale = Vector2(2.6875, 2.6875)
+sprite_frames = SubResource("SpriteFrames_rr34s")

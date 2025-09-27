@@ -1,25 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://damowd11qhhi8"]
+[gd_scene load_steps=6 format=3 uid="uid://biq3foop4pvt"]
 
+[ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scenes/crate.gd" id="1_77l3o"]
 [ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="2_77l3o"]
 [ext_resource type="Texture2D" uid="uid://bmob314u7ce7r" path="res://Images/Torch.png" id="3_qusok"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_77l3o"]
 friction = 26.4
-
-[sub_resource type="GDScript" id="GDScript_f8d1k"]
-script/source = "extends Node2D
-
-func _on_area_2d_body_entered(body):
-	if body.global_position.x < global_position.x:
-		print(\"z lewej\")
-	elif body.position.x > global_position.x:
-		print(\"z prawej\")
-	elif body.position.y > global_position.y:
-		print(\"z góry\")
-
-func _process(delta: float) -> void:
-	
-"
 
 [sub_resource type="GDScript" id="GDScript_77l3o"]
 script/source = "extends Sprite2D
@@ -37,9 +23,6 @@ func _process(delta: float) -> void:
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77l3o"]
 size = Vector2(32, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qusok"]
-size = Vector2(12, 23)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7j5pf"]
 atlas = ExtResource("3_qusok")
@@ -75,7 +58,8 @@ animations = [{
 [node name="Crate" type="RigidBody2D" parent="."]
 texture_filter = 1
 physics_material_override = SubResource("PhysicsMaterial_77l3o")
-script = SubResource("GDScript_f8d1k")
+lock_rotation = true
+script = ExtResource("1_77l3o")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crate"]
 texture = ExtResource("2_77l3o")
@@ -85,14 +69,8 @@ script = SubResource("GDScript_77l3o")
 shape = SubResource("RectangleShape2D_77l3o")
 debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
 
-[node name="Torch" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Torch"]
-position = Vector2(254, 264.5)
-shape = SubResource("RectangleShape2D_qusok")
-
-[node name="torch" type="AnimatedSprite2D" parent="Torch"]
+[node name="torch" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(256, 260)
 sprite_frames = SubResource("SpriteFrames_bl8y8")
-frame_progress = 0.67117274
+frame_progress = 0.71696025
