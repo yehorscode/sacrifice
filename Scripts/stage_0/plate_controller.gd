@@ -1,6 +1,6 @@
 extends Node
 
-@export var completed_crates := 0
+@export var completed_crates = 0
 
 signal crate_placed
 signal crate_removed
