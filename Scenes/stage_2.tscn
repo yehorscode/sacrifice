@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://pc5xhl2npcmd"]
+[gd_scene load_steps=15 format=4 uid="uid://pc5xhl2npcmd"]
 
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_wxne6"]
 [ext_resource type="Texture2D" uid="uid://v21mur71yxta" path="res://Images/brick_tile.png" id="2_j7yc3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cchnwn5pjdte0" path="res://Images/dispenser-1.png.png" id="6_j7yc3"]
 [ext_resource type="Script" uid="uid://ncjs8n3njiet" path="res://Scripts/dispensers/dispenser.gd" id="7_m6j64"]
 [ext_resource type="PackedScene" uid="uid://t25m8qexmwui" path="res://Scenes/arrow.tscn" id="8_i2od2"]
+[ext_resource type="AudioStream" uid="uid://dtfspwhgfttqe" path="res://Sounds/soundtrack_mono(1).wav" id="9_5wu1i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxocw"]
 texture = ExtResource("1_wxne6")
@@ -39,7 +40,7 @@ size = Vector2(60.5, 86.25)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
 scale = Vector2(2.001, 2)
-tile_map_data = PackedByteArray("AAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD//wIAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAD///D/AgAAAAAAAAD///H/AgAAAAAAAAD///L/AgAAAAAAAAD///P/AgAAAAAAAAD///T/AgAAAAAAAAD///X/AgAAAAAAAAD///b/AgAAAAAAAAD///f/AgAAAAAAAAD///j/AgAAAAAAAAD///n/AgAAAAAAAAD///r/AgAAAAAAAAD///v/AgAAAAAAAAD///z/AgAAAAAAAAD///3/AgAAAAAAAAD///7/AgAAAAAAAAD/////AgAAAAAAAAAAAPD/AgAAAAAAAAAAAPH/AgAAAAAAAAAAAPL/AgAAAAAAAAAAAPP/AgAAAAAAAAAAAPT/AgAAAAAAAAAAAPX/AgAAAAAAAAAAAPb/AgAAAAAAAAAAAPf/AgAAAAAAAAAAAPj/AgAAAAAAAAAAAPn/AgAAAAAAAAAAAPr/AgAAAAAAAAAAAPv/AgAAAAAAAAAAAPz/AgAAAAAAAAAAAP3/AgAAAAAAAAAAAP7/AgAAAAAAAAAAAP//AgAAAAAAAAD//+f/AgAAAAAAAAD//+j/AgAAAAAAAAD//+n/AgAAAAAAAAD//+r/AgAAAAAAAAD//+v/AgAAAAAAAAD//+z/AgAAAAAAAAD//+3/AgAAAAAAAAD//+7/AgAAAAAAAAD//+//AgAAAAAAAAAAAOf/AgAAAAAAAAAAAOj/AgAAAAAAAAAAAOn/AgAAAAAAAAAAAOr/AgAAAAAAAAAAAOv/AgAAAAAAAAAAAOz/AgAAAAAAAAAAAO3/AgAAAAAAAAAAAO7/AgAAAAAAAAAAAO//AgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAD///T/AgAAAAAAAAD///X/AgAAAAAAAAD///b/AgAAAAAAAAD///f/AgAAAAAAAAD///j/AgAAAAAAAAD///n/AgAAAAAAAAD///r/AgAAAAAAAAD///v/AgAAAAAAAAD///z/AgAAAAAAAAD///3/AgAAAAAAAAD///7/AgAAAAAAAAD/////AgAAAAAAAAAAAPT/AgAAAAAAAAAAAPX/AgAAAAAAAAAAAPb/AgAAAAAAAAAAAPf/AgAAAAAAAAAAAPj/AgAAAAAAAAAAAPn/AgAAAAAAAAAAAPr/AgAAAAAAAAAAAPv/AgAAAAAAAAAAAPz/AgAAAAAAAAAAAP3/AgAAAAAAAAAAAP7/AgAAAAAAAAAAAP//AgAAAAAAAAA=")
 tile_set = SubResource("TileSet_uhyr0")
 
 [node name="Player" type="CharacterBody2D" parent="."]
@@ -58,10 +59,51 @@ texture = ExtResource("5_5wu1i")
 position = Vector2(5, 23)
 shape = SubResource("RectangleShape2D_e5m3y")
 
+[node name="AudioListener2D" type="AudioListener2D" parent="Player"]
+
 [node name="Dispenser" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-127, -32)
+position = Vector2(-125, -158)
 scale = Vector2(2, 2)
 texture = ExtResource("6_j7yc3")
 script = ExtResource("7_m6j64")
 arrow_scene = ExtResource("8_i2od2")
+shoot_interval = 0.8
+
+[node name="Dispenser2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-124, -61)
+scale = Vector2(2, 2)
+texture = ExtResource("6_j7yc3")
+script = ExtResource("7_m6j64")
+arrow_scene = ExtResource("8_i2od2")
+
+[node name="Dispenser3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-124, -319)
+scale = Vector2(2, 2)
+texture = ExtResource("6_j7yc3")
+script = ExtResource("7_m6j64")
+arrow_scene = ExtResource("8_i2od2")
+shoot_interval = 1.0
+
+[node name="Dispenser4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-124, -500)
+scale = Vector2(2, 2)
+texture = ExtResource("6_j7yc3")
+script = ExtResource("7_m6j64")
+arrow_scene = ExtResource("8_i2od2")
+shoot_interval = 2.5
+
+[node name="Dispenser5" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-126.000015, -617)
+scale = Vector2(1.90625, 1.90625)
+texture = ExtResource("6_j7yc3")
+script = ExtResource("7_m6j64")
+arrow_scene = ExtResource("8_i2od2")
+shoot_interval = 0.5
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_5wu1i")

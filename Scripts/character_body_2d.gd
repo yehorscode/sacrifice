@@ -38,12 +38,18 @@ func handle_input():
 		dir_y = Vector2.DOWN
 		sprite.texture = sprite_down
 	if Input.is_action_pressed("A_Left"):
-		dir_y = Vector2.LEFT
+		dir_x = Vector2.LEFT
 		sprite.texture = sprite_left
 	elif Input.is_action_pressed("D_Right"):
-		dir_y = Vector2.RIGHT
+		dir_x = Vector2.RIGHT
 		sprite.texture = sprite_right
 
+	
+	if Input.is_action_pressed("ui_home"):
+		move_speed = 1000
+	else:
+		move_speed = 200
+		
 	if dir_x != Vector2.ZERO or dir_y != Vector2.ZERO:
 		var motion = (dir_x * grid_size) + (dir_y * grid_size) 
 		var collision = move_and_collide(motion)
@@ -56,7 +62,7 @@ func handle_input():
 			# If we collided with a box, push it
 			var collider = collision.get_collider()
 			if collider.is_in_group("box"):
-				collider.apply_impulse(Vector2.ZERO, dir * 200)  # Adjust force as needed
+				collider.apply_impulse(Vector2.ZERO, dir_x + dir_y * 200)  # Adjust force as needed
 				target_position = position + motion
 				moving = true
 
