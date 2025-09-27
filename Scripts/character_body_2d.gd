@@ -28,14 +28,13 @@ func _physics_process(delta):
 		handle_input()
 
 func handle_input():
-	var dir_x = Vector2.ZERO
-	var dir_y = Vector2.ZERO
+	var dir = Vector2.ZERO
 
 	if Input.is_action_pressed("W_Foward"):
-		dir_y = Vector2.UP
+		dir = Vector2.UP
 		sprite.texture = sprite_up
 	elif Input.is_action_pressed("S_Backwards"):
-		dir_y = Vector2.DOWN
+		dir = Vector2.DOWN
 		sprite.texture = sprite_down
 	if Input.is_action_pressed("A_Left"):
 		dir_x = Vector2.LEFT
@@ -51,7 +50,7 @@ func handle_input():
 	if dir_x != Vector2.ZERO or dir_y != Vector2.ZERO:
 		var motion = (dir_x * grid_size) + (dir_y * grid_size) 
 		var collision = move_and_collide(motion)
-
+		
 		if collision == null:
 			# No collision, move normally
 			target_position = position + motion
