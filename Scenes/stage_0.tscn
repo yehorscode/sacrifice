@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://4jvih66khjds"]
+[gd_scene load_steps=37 format=4 uid="uid://4jvih66khjds"]
 
 [ext_resource type="Texture2D" uid="uid://cmg4y4hxlk4ma" path="res://Images/green.png" id="1_ih5ye"]
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_oxfjx"]
@@ -7,16 +7,16 @@
 [ext_resource type="Script" uid="uid://nhfbd6b5kkwr" path="res://Scripts/character_body_2d.gd" id="4_7j5pf"]
 [ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scripts/stage_0/crate.gd" id="6_f8d1k"]
 [ext_resource type="Texture2D" uid="uid://d1wcvyblnnqtd" path="res://Images/Character/Left.png" id="6_rr34s"]
-[ext_resource type="Script" uid="uid://bafbwk3exufhc" path="res://Scripts/torch.gd" id="7_lt8ko"]
+[ext_resource type="Script" path="res://Scenes/torch.gd" id="7_lt8ko"]
 [ext_resource type="Texture2D" uid="uid://bmob314u7ce7r" path="res://Images/Torch.png" id="7_vw4cj"]
 [ext_resource type="Script" uid="uid://bvg7bis4ktp3a" path="res://Scripts/stage_0/pressure_plate.gd" id="8_ro56c"]
 [ext_resource type="Texture2D" uid="uid://dxmkoq2gfwoq1" path="res://Images/New Piskel (1).png" id="8_rr34s"]
 [ext_resource type="Texture2D" uid="uid://cj2peaw7o0axf" path="res://Images/New Piskel (2).png" id="9_7r0vn"]
 [ext_resource type="Texture2D" uid="uid://6w8vtml5srs7" path="res://Images/pressure_plate.png" id="9_b4ict"]
 [ext_resource type="Script" uid="uid://ccmug0l1aqvjm" path="res://Scripts/stage_0/plate_controller.gd" id="10_b4ict"]
-[ext_resource type="PackedScene" uid="uid://djw2h32dxyh10" path="res://Scenes/music_controller.tscn" id="14_2shdo"]
 [ext_resource type="Texture2D" uid="uid://diyk2h76df48i" path="res://Images/Gate.png" id="14_2shdo"]
-[ext_resource type="Script" uid="uid://byv7oyoqeeebm" path="res://Scripts/finish_0.gd" id="16_ih5ye"]
+[ext_resource type="Script" path="res://Scripts/finish_0.gd" id="16_ih5ye"]
+[ext_resource type="PackedScene" uid="uid://djw2h32dxyh10" path="res://Scenes/music_controller.tscn" id="17_eqg2b"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7r0vn"]
 
@@ -371,7 +371,6 @@ script = ExtResource("7_lt8ko")
 position = Vector2(-759, 499)
 shape = SubResource("RectangleShape2D_2shdo")
 
-[node name="MusicController" parent="." instance=ExtResource("14_2shdo")]
 [node name="Gate" type="StaticBody2D" parent="."]
 texture_filter = 1
 position = Vector2(-1506, 411)
@@ -403,3 +402,5 @@ offset_right = -1390.0
 offset_bottom = -148.0
 scale = Vector2(3.8363535, 4.560944)
 color = Color(0, 0, 0, 1)
+
+[node name="MusicController" parent="." instance=ExtResource("17_eqg2b")]
