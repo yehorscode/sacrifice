@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://pc5xhl2npcmd"]
+[gd_scene load_steps=14 format=4 uid="uid://pc5xhl2npcmd"]
 
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_wxne6"]
 [ext_resource type="Texture2D" uid="uid://v21mur71yxta" path="res://Images/brick_tile.png" id="2_j7yc3"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://nhfbd6b5kkwr" path="res://Scripts/character_body_2d.gd" id="4_i2od2"]
 [ext_resource type="Texture2D" uid="uid://bobtve1te8p4f" path="res://Images/Character/Right.png" id="5_5wu1i"]
 [ext_resource type="Texture2D" uid="uid://cchnwn5pjdte0" path="res://Images/dispenser-1.png.png" id="6_j7yc3"]
+[ext_resource type="Script" uid="uid://ncjs8n3njiet" path="res://Scripts/dispenser.gd" id="7_m6j64"]
+[ext_resource type="PackedScene" uid="uid://t25m8qexmwui" path="res://Scenes/arrow.tscn" id="8_i2od2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxocw"]
 texture = ExtResource("1_wxne6")
@@ -58,6 +60,8 @@ shape = SubResource("RectangleShape2D_e5m3y")
 
 [node name="Dispenser" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-96, -32)
+position = Vector2(-127, -32)
 scale = Vector2(2, 2)
 texture = ExtResource("6_j7yc3")
+script = ExtResource("7_m6j64")
+arrow_scene = ExtResource("8_i2od2")
