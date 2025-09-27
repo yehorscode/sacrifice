@@ -192,9 +192,7 @@ script = ExtResource("8_j221e")
 position = Vector2(110, -1193)
 shape = SubResource("RectangleShape2D_wp4it")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="finish"]
-
-[node name="ColorRect" type="ColorRect" parent="finish/CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="finish"]
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
@@ -282,3 +280,5 @@ texture_filter = 1
 position = Vector2(2.500001, -5.500001)
 scale = Vector2(0.515625, 0.515625)
 texture = ExtResource("9_vy6i2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
