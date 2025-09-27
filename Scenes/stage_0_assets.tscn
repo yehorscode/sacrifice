@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://biq3foop4pvt"]
+[gd_scene load_steps=11 format=3 uid="uid://biq3foop4pvt"]
 
 [ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scenes/crate.gd" id="1_77l3o"]
 [ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="2_77l3o"]
@@ -50,7 +50,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 0.5
 }]
 
 [node name="Stage0Assets" type="Node2D"]
@@ -73,4 +73,4 @@ debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
 texture_filter = 1
 position = Vector2(256, 260)
 sprite_frames = SubResource("SpriteFrames_bl8y8")
-frame_progress = 0.71696025
+frame_progress = 0.16847
