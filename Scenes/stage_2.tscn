@@ -103,7 +103,7 @@ scale = Vector2(1.90625, 1.90625)
 texture = ExtResource("6_j7yc3")
 script = ExtResource("7_m6j64")
 arrow_scene = ExtResource("8_i2od2")
-shoot_interval = 0.5
+shoot_interval = 0.75
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_5wu1i")
