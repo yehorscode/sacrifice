@@ -22,7 +22,7 @@ sources/1 = SubResource("TileSetAtlasSource_tx0tn")
 sources/2 = SubResource("TileSetAtlasSource_wjtap")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
-size = Vector2(77, 104.5)
+size = Vector2(77, 106.5)
 
 [node name="Node2D" type="Node2D"]
 
@@ -42,5 +42,5 @@ scale = Vector2(0.098660655, 0.098660655)
 texture = ExtResource("2_v1qfn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(569.5, 322.25)
+position = Vector2(569.5, 321.25)
 shape = SubResource("RectangleShape2D_epypp")
