@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c3llcj7nmrpov"]
+[gd_scene load_steps=14 format=4 uid="uid://c3llcj7nmrpov"]
 
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_oxfjx"]
 [ext_resource type="Texture2D" uid="uid://v21mur71yxta" path="res://Images/brick_tile.png" id="2_f8d1k"]
@@ -32,7 +32,11 @@ sources/3 = SubResource("TileSetAtlasSource_v7gqg")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(77, 106.5)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f8d1k"]
+friction = 26.4
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vw4cj"]
+size = Vector2(32, 32)
 
 [node name="Node2D" type="Node2D"]
 
@@ -54,11 +58,15 @@ shape = SubResource("RectangleShape2D_epypp")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(86, -2)
+[node name="Crate" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(66, -3)
+physics_material_override = SubResource("PhysicsMaterial_f8d1k")
 script = ExtResource("6_f8d1k")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-modulate = Color(0.85490197, 0, 1, 1)
+[node name="Sprite2D" type="Sprite2D" parent="Crate"]
+texture = ExtResource("3_vw4cj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
 shape = SubResource("RectangleShape2D_vw4cj")
 debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)

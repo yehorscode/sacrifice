@@ -1,19 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://damowd11qhhi8"]
+[gd_scene load_steps=6 format=3 uid="uid://damowd11qhhi8"]
 
 [ext_resource type="Script" uid="uid://qobivxw3d6of" path="res://Scripts/stage_0/area_2d.gd" id="1_skfmt"]
 [ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="2_77l3o"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_77l3o"]
+friction = 26.4
+
+[sub_resource type="GDScript" id="GDScript_77l3o"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77l3o"]
 size = Vector2(32, 32)
 
 [node name="Stage0Assets" type="Node2D"]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Crate" type="RigidBody2D" parent="."]
+texture_filter = 1
+physics_material_override = SubResource("PhysicsMaterial_77l3o")
 script = ExtResource("1_skfmt")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Crate"]
 texture = ExtResource("2_77l3o")
+script = SubResource("GDScript_77l3o")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
 shape = SubResource("RectangleShape2D_77l3o")
 debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
