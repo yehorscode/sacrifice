@@ -1,15 +1,11 @@
-[gd_scene load_steps=24 format=4 uid="uid://4jvih66khjds"]
+[gd_scene load_steps=16 format=4 uid="uid://4jvih66khjds"]
 
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_oxfjx"]
 [ext_resource type="Texture2D" uid="uid://v21mur71yxta" path="res://Images/brick_tile.png" id="2_f8d1k"]
 [ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="3_vw4cj"]
 [ext_resource type="Script" uid="uid://nhfbd6b5kkwr" path="res://Scripts/character_body_2d.gd" id="4_7j5pf"]
 [ext_resource type="Texture2D" uid="uid://djpmym2g2fmla" path="res://Images/Character/Right.png" id="5_ro56c"]
-[ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scenes/crate.gd" id="6_f8d1k"]
 [ext_resource type="Texture2D" uid="uid://bmob314u7ce7r" path="res://Images/Torch.png" id="7_vw4cj"]
-[ext_resource type="Script" uid="uid://bvg7bis4ktp3a" path="res://Scenes/pressure_plate.gd" id="8_ro56c"]
-[ext_resource type="Texture2D" uid="uid://6w8vtml5srs7" path="res://Images/pressure_plate.png" id="9_b4ict"]
-[ext_resource type="Script" uid="uid://ccmug0l1aqvjm" path="res://Scenes/plate_controller.gd" id="11_rr34s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tx0tn"]
 texture = ExtResource("1_oxfjx")
@@ -65,29 +61,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ro56c"]
-friction = 26.4
-
-[sub_resource type="GDScript" id="GDScript_b4ict"]
-script/source = "extends Sprite2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rr34s"]
-size = Vector2(32, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7r0vn"]
-size = Vector2(32, 32)
-
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -114,32 +87,3 @@ texture_filter = 1
 position = Vector2(229, 233)
 scale = Vector2(2.6875, 2.6875)
 sprite_frames = SubResource("SpriteFrames_rr34s")
-
-[node name="Crate" type="RigidBody2D" parent="."]
-texture_filter = 1
-position = Vector2(-169, -37)
-physics_material_override = SubResource("PhysicsMaterial_ro56c")
-lock_rotation = true
-script = ExtResource("6_f8d1k")
-
-[node name="Sprite2D" type="Sprite2D" parent="Crate"]
-texture = ExtResource("3_vw4cj")
-script = SubResource("GDScript_b4ict")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
-shape = SubResource("RectangleShape2D_rr34s")
-debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
-
-[node name="PressurePlate" type="Area2D" parent="."]
-position = Vector2(-242, -45)
-script = ExtResource("8_ro56c")
-
-[node name="Sprite2D" type="Sprite2D" parent="PressurePlate"]
-texture_filter = 1
-texture = ExtResource("9_b4ict")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PressurePlate"]
-shape = SubResource("RectangleShape2D_7r0vn")
-
-[node name="PlateController" type="Node" parent="."]
-script = ExtResource("11_rr34s")
