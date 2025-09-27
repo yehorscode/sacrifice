@@ -135,7 +135,7 @@ sprite_frames = SubResource("SpriteFrames_rr34s")
 [node name="Crate2" type="RigidBody2D" parent="."]
 z_index = 1
 texture_filter = 1
-position = Vector2(-824, 1151)
+position = Vector2(-876, 1103)
 physics_material_override = SubResource("PhysicsMaterial_ro56c")
 lock_rotation = true
 script = ExtResource("6_f8d1k")
@@ -152,7 +152,7 @@ debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
 [node name="Crate3" type="RigidBody2D" parent="."]
 z_index = 1
 texture_filter = 1
-position = Vector2(-2157, 1412)
+position = Vector2(-2155, 1378)
 physics_material_override = SubResource("PhysicsMaterial_ro56c")
 lock_rotation = true
 script = ExtResource("6_f8d1k")
@@ -169,7 +169,7 @@ debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
 [node name="Crate4" type="RigidBody2D" parent="."]
 z_index = 1
 texture_filter = 1
-position = Vector2(-494, 1395)
+position = Vector2(-541, 1366)
 physics_material_override = SubResource("PhysicsMaterial_ro56c")
 lock_rotation = true
 script = ExtResource("6_f8d1k")
@@ -186,7 +186,7 @@ debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
 [node name="Crate5" type="RigidBody2D" parent="."]
 z_index = 1
 texture_filter = 1
-position = Vector2(-2122, 761)
+position = Vector2(-1001, 720)
 physics_material_override = SubResource("PhysicsMaterial_ro56c")
 lock_rotation = true
 script = ExtResource("6_f8d1k")
@@ -203,7 +203,7 @@ debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
 [node name="Crate6" type="RigidBody2D" parent="."]
 z_index = 1
 texture_filter = 1
-position = Vector2(-298, 220)
+position = Vector2(-339, 120)
 physics_material_override = SubResource("PhysicsMaterial_ro56c")
 lock_rotation = true
 script = ExtResource("6_f8d1k")
