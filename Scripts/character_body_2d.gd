@@ -48,3 +48,6 @@ func handle_input():
 		last_dir_y = dir_y
 		target_position = position + (dir_x * grid_size) + (dir_y * grid_size)
 		moving = true
+
+func die():
+	get_tree().call_deferred("reload_current_scene")
