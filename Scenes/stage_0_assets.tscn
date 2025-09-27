@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://biq3foop4pvt"]
+[gd_scene load_steps=14 format=3 uid="uid://biq3foop4pvt"]
 
 [ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scenes/crate.gd" id="1_77l3o"]
 [ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="2_77l3o"]
 [ext_resource type="Texture2D" uid="uid://bmob314u7ce7r" path="res://Images/Torch.png" id="3_qusok"]
+[ext_resource type="Texture2D" uid="uid://6w8vtml5srs7" path="res://Images/pressure_plate.png" id="4_bl8y8"]
+[ext_resource type="Script" uid="uid://bvg7bis4ktp3a" path="res://Scenes/pressure_plate.gd" id="4_r3y11"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_77l3o"]
 friction = 26.4
@@ -53,6 +55,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3y11"]
+size = Vector2(32, 32)
+
 [node name="Stage0Assets" type="Node2D"]
 
 [node name="Crate" type="RigidBody2D" parent="."]
@@ -74,3 +79,13 @@ texture_filter = 1
 position = Vector2(256, 260)
 sprite_frames = SubResource("SpriteFrames_bl8y8")
 frame_progress = 0.71696025
+
+[node name="PressurePlate" type="Area2D" parent="."]
+script = ExtResource("4_r3y11")
+
+[node name="Sprite2D" type="Sprite2D" parent="PressurePlate"]
+texture_filter = 1
+texture = ExtResource("4_bl8y8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PressurePlate"]
+shape = SubResource("RectangleShape2D_r3y11")
