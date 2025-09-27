@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://c3llcj7nmrpov"]
 
 [ext_resource type="Script" uid="uid://nhfbd6b5kkwr" path="res://Scripts/character_body_2d.gd" id="1_v1qfn"]
-[ext_resource type="Texture2D" uid="uid://x75lm0jwyta2" path="res://Images/icon.svg" id="2_hh5uf"]
+[ext_resource type="Texture2D" uid="uid://djpmym2g2fmla" path="res://Images/Character/Right.png" id="2_v1qfn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
-size = Vector2(126, 127)
+size = Vector2(77, 104.5)
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,9 +12,10 @@ size = Vector2(126, 127)
 script = ExtResource("1_v1qfn")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(510, 242)
-texture = ExtResource("2_hh5uf")
+position = Vector2(571.75, 323.75003)
+scale = Vector2(0.098660655, 0.098660655)
+texture = ExtResource("2_v1qfn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(510, 242.5)
+position = Vector2(569.5, 322.25)
 shape = SubResource("RectangleShape2D_epypp")
