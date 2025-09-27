@@ -149,7 +149,7 @@ shape = SubResource("RectangleShape2D_epypp")
 [node name="Crate2" type="RigidBody2D" parent="."]
 z_index = 2
 texture_filter = 1
-position = Vector2(-850, 576)
+position = Vector2(-323, 337)
 physics_material_override = SubResource("PhysicsMaterial_ro56c")
 lock_rotation = true
 script = ExtResource("6_f8d1k")
@@ -166,7 +166,7 @@ debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
 [node name="Crate3" type="RigidBody2D" parent="."]
 z_index = 2
 texture_filter = 1
-position = Vector2(-948, 577)
+position = Vector2(-159, -149)
 physics_material_override = SubResource("PhysicsMaterial_ro56c")
 lock_rotation = true
 script = ExtResource("6_f8d1k")
@@ -183,7 +183,7 @@ debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
 [node name="Crate4" type="RigidBody2D" parent="."]
 z_index = 2
 texture_filter = 1
-position = Vector2(-1039, 580)
+position = Vector2(-1513, 1275)
 physics_material_override = SubResource("PhysicsMaterial_ro56c")
 lock_rotation = true
 script = ExtResource("6_f8d1k")
@@ -200,7 +200,7 @@ debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
 [node name="Crate5" type="RigidBody2D" parent="."]
 z_index = 2
 texture_filter = 1
-position = Vector2(-1138, 567)
+position = Vector2(-2318, 315)
 physics_material_override = SubResource("PhysicsMaterial_ro56c")
 lock_rotation = true
 script = ExtResource("6_f8d1k")
@@ -217,7 +217,7 @@ debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
 [node name="Crate6" type="RigidBody2D" parent="."]
 z_index = 2
 texture_filter = 1
-position = Vector2(-1221, 560)
+position = Vector2(-190, 1409)
 physics_material_override = SubResource("PhysicsMaterial_ro56c")
 lock_rotation = true
 script = ExtResource("6_f8d1k")
@@ -394,6 +394,7 @@ shape = SubResource("RectangleShape2D_jwqfi")
 [node name="CanvasLayer" type="CanvasLayer" parent="finish"]
 
 [node name="ColorRect" type="ColorRect" parent="finish/CanvasLayer"]
+visible = false
 offset_left = -3310.0
 offset_top = -1228.0
 offset_right = -1390.0
