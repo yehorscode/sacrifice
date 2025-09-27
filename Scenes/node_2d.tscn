@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://c3llcj7nmrpov"]
+[gd_scene load_steps=11 format=4 uid="uid://c3llcj7nmrpov"]
 
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_6whob"]
 [ext_resource type="Script" uid="uid://nhfbd6b5kkwr" path="res://Scripts/character_body_2d.gd" id="1_v1qfn"]
 [ext_resource type="Texture2D" uid="uid://v21mur71yxta" path="res://Images/brick_tile.png" id="2_u7krg"]
 [ext_resource type="Texture2D" uid="uid://djpmym2g2fmla" path="res://Images/Character/Right.png" id="2_v1qfn"]
+[ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="3_u7krg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tx0tn"]
 texture = ExtResource("1_6whob")
@@ -15,11 +16,17 @@ texture = ExtResource("2_u7krg")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v7gqg"]
+texture = ExtResource("3_u7krg")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_v7gqg"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_tx0tn")
 sources/2 = SubResource("TileSetAtlasSource_wjtap")
+sources/3 = SubResource("TileSetAtlasSource_v7gqg")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(77, 106.5)
