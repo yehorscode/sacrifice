@@ -41,8 +41,8 @@ sources/3 = SubResource("TileSetAtlasSource_hbpxv")
 sources/4 = SubResource("TileSetAtlasSource_brndx")
 sources/5 = SubResource("TileSetAtlasSource_wlb4h")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vmge"]
-size = Vector2(21, 28)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3pjs0"]
+height = 26.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3tp71"]
 friction = 26.4
@@ -91,8 +91,8 @@ texture = ExtResource("2_e68fo")
 zoom = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(1.5, 8)
-shape = SubResource("RectangleShape2D_8vmge")
+position = Vector2(2, 9)
+shape = SubResource("CapsuleShape2D_3pjs0")
 
 [node name="Crate" type="RigidBody2D" parent="."]
 texture_filter = 1
