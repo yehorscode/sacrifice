@@ -11,17 +11,17 @@
 [ext_resource type="Texture2D" uid="uid://6w8vtml5srs7" path="res://Images/pressure_plate.png" id="9_b4ict"]
 [ext_resource type="Script" uid="uid://ccmug0l1aqvjm" path="res://Scripts/stage_0/plate_controller.gd" id="10_b4ict"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tx0tn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b4ict"]
 texture = ExtResource("1_oxfjx")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjtap"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rr34s"]
 texture = ExtResource("2_f8d1k")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v7gqg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7r0vn"]
 texture = ExtResource("3_vw4cj")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -29,9 +29,9 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_v7gqg"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_tx0tn")
-sources/2 = SubResource("TileSetAtlasSource_wjtap")
-sources/3 = SubResource("TileSetAtlasSource_v7gqg")
+sources/1 = SubResource("TileSetAtlasSource_b4ict")
+sources/2 = SubResource("TileSetAtlasSource_rr34s")
+sources/3 = SubResource("TileSetAtlasSource_7r0vn")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(77, 87.25)
@@ -78,7 +78,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 "
 

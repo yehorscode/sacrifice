@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=4 uid="uid://pc5xhl2npcmd"]
+
+[ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_wxne6"]
+[ext_resource type="Texture2D" uid="uid://v21mur71yxta" path="res://Images/brick_tile.png" id="2_j7yc3"]
+[ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="3_m6j64"]
+[ext_resource type="Script" uid="uid://nhfbd6b5kkwr" path="res://Scripts/character_body_2d.gd" id="4_i2od2"]
+[ext_resource type="Texture2D" uid="uid://bobtve1te8p4f" path="res://Images/Character/Right.png" id="5_5wu1i"]
+[ext_resource type="Texture2D" uid="uid://cchnwn5pjdte0" path="res://Images/dispenser-1.png.png" id="6_j7yc3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uxocw"]
+texture = ExtResource("1_wxne6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjg4a"]
+texture = ExtResource("2_j7yc3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b16lr"]
+texture = ExtResource("3_m6j64")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_uhyr0"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_uxocw")
+sources/2 = SubResource("TileSetAtlasSource_wjg4a")
+sources/3 = SubResource("TileSetAtlasSource_b16lr")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5m3y"]
+size = Vector2(60.5, 86.25)
+
+[node name="Stage2" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(2.001, 2)
+tile_map_data = PackedByteArray("AAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD//wIAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAD///D/AgAAAAAAAAD///H/AgAAAAAAAAD///L/AgAAAAAAAAD///P/AgAAAAAAAAD///T/AgAAAAAAAAD///X/AgAAAAAAAAD///b/AgAAAAAAAAD///f/AgAAAAAAAAD///j/AgAAAAAAAAD///n/AgAAAAAAAAD///r/AgAAAAAAAAD///v/AgAAAAAAAAD///z/AgAAAAAAAAD///3/AgAAAAAAAAD///7/AgAAAAAAAAD/////AgAAAAAAAAAAAPD/AgAAAAAAAAAAAPH/AgAAAAAAAAAAAPL/AgAAAAAAAAAAAPP/AgAAAAAAAAAAAPT/AgAAAAAAAAAAAPX/AgAAAAAAAAAAAPb/AgAAAAAAAAAAAPf/AgAAAAAAAAAAAPj/AgAAAAAAAAAAAPn/AgAAAAAAAAAAAPr/AgAAAAAAAAAAAPv/AgAAAAAAAAAAAPz/AgAAAAAAAAAAAP3/AgAAAAAAAAAAAP7/AgAAAAAAAAAAAP//AgAAAAAAAAD//+f/AgAAAAAAAAD//+j/AgAAAAAAAAD//+n/AgAAAAAAAAD//+r/AgAAAAAAAAD//+v/AgAAAAAAAAD//+z/AgAAAAAAAAD//+3/AgAAAAAAAAD//+7/AgAAAAAAAAD//+//AgAAAAAAAAAAAOf/AgAAAAAAAAAAAOj/AgAAAAAAAAAAAOn/AgAAAAAAAAAAAOr/AgAAAAAAAAAAAOv/AgAAAAAAAAAAAOz/AgAAAAAAAAAAAO3/AgAAAAAAAAAAAO7/AgAAAAAAAAAAAO//AgAAAAAAAAA=")
+tile_set = SubResource("TileSet_uhyr0")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+disable_mode = 2
+script = ExtResource("4_i2od2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture_filter = 1
+position = Vector2(0.7107147, 0.7107147)
+scale = Vector2(3.799, 3.799)
+texture = ExtResource("5_5wu1i")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(5, 23)
+shape = SubResource("RectangleShape2D_e5m3y")
+
+[node name="Dispenser" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-96, -32)
+scale = Vector2(2, 2)
+texture = ExtResource("6_j7yc3")
