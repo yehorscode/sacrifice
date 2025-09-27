@@ -8,7 +8,7 @@ func _ready():
 	fade_rect.modulate.a = 0.0
 
 func _on_body_entered(_body):
-	fade_to_black("res://Scenes/stage_2.tscn")
+	fade_to_black("res://Scenes/stage_1.tscn")
 
 func fade_to_black(scene_path: String):
 	# Create a Tween to fade to black
