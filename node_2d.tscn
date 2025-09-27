@@ -1,12 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://djs26gx3rwm34"]
+[gd_scene load_steps=9 format=4 uid="uid://djs26gx3rwm34"]
 
 [ext_resource type="Script" uid="uid://cletv57cm5sle" path="res://character_body_2d.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="3_0hol4"]
 [ext_resource type="Texture2D" uid="uid://v21mur71yxta" path="res://Images/brick_tile.png" id="3_epypp"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
-size = Vector2(126, 127)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
 texture = ExtResource("3_0hol4")
@@ -24,7 +21,16 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_q6r6c")
 sources/2 = SubResource("TileSetAtlasSource_kdubu")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(126, 127)
+
 [node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+position = Vector2(555, 333)
+tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAP//AgAAAAAAAAABAP//AgAAAAAAAAACAP//AgAAAAAAAAADAP//AgAAAAAAAAADAP7/AgAAAAAAAAADAP3/AgAAAAAAAAACAP3/AgAAAAAAAAABAP3/AgAAAAAAAAAAAP3/AgAAAAAAAAD///3/AgAAAAAAAAD+//3/AgAAAAAAAAD9//3/AgAAAAAAAAD8//3/AgAAAAAAAAD8//7/AgAAAAAAAAD8////AgAAAAAAAAD8/wAAAgAAAAAAAAD9/wAAAgAAAAAAAAD9/wEAAgAAAAAAAAD+/wEAAgAAAAAAAAD//wEAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAABAP7/AgAAAAAAAAAAAP7/AgAAAAAAAAD9//7/AgAAAAAAAAD9////AgAAAAAAAAD+////AgAAAAAAAAACAP7/AgAAAAAAAAD7////AgAAAAAAAAACAAAAAgAAAAAAAAADAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAAFAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAHAAAAAgAAAAAAAAAFAP//AgAAAAAAAAAEAP//AgAAAAAAAAD///7/AgAAAAAAAAD+//7/AgAAAAAAAAD+/wAAAgAAAAAAAAD//wAAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_q6r6c")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_0e48y")
@@ -36,7 +42,3 @@ texture = ExtResource("1_wtcfe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(510, 242.5)
 shape = SubResource("RectangleShape2D_epypp")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(575, 323)
-tile_set = SubResource("TileSet_q6r6c")
