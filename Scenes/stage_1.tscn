@@ -196,10 +196,10 @@ shape = SubResource("RectangleShape2D_wp4it")
 [node name="CanvasLayer" type="CanvasLayer" parent="finish"]
 
 [node name="ColorRect" type="ColorRect" parent="finish/CanvasLayer"]
-offset_left = 439.0
-offset_top = 190.0
-offset_right = 2359.0
-offset_bottom = 1270.0
+offset_left = -1777.0
+offset_top = -1561.0
+offset_right = 1670.0
+offset_bottom = 902.0
 color = Color(0, 0, 0, 1)
 
 [node name="Sprite2D2" type="StaticBody2D" parent="."]
