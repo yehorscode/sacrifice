@@ -26,8 +26,37 @@ func _process(delta: float) -> void:
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hhju"]
 size = Vector2(32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7njp"]
-size = Vector2(32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw4cj"]
+atlas = ExtResource("3_qusok")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7j5pf"]
+atlas = ExtResource("3_qusok")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro56c"]
+atlas = ExtResource("3_qusok")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qusok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw4cj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7j5pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro56c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.5
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3y11"]
+size = Vector2(20, 29)
 
 [node name="Stage0Assets" type="Node2D"]
 
@@ -52,10 +81,19 @@ script = ExtResource("3_r3y11")
 
 [node name="Sprite2D" type="Sprite2D" parent="PressurePlate"]
 texture_filter = 1
-texture = ExtResource("4_qecmu")
+position = Vector2(256, 260)
+sprite_frames = SubResource("SpriteFrames_qusok")
+frame_progress = 0.16847
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PressurePlate"]
-shape = SubResource("RectangleShape2D_t7njp")
+[node name="Sprite2D" type="StaticBody2D" parent="."]
+position = Vector2(141, 151)
 
-[node name="PlateController" type="Node" parent="."]
-script = ExtResource("5_nq6aa")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+position = Vector2(3, -3.5)
+shape = SubResource("RectangleShape2D_r3y11")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+texture_filter = 1
+position = Vector2(2.500001, -5.500001)
+scale = Vector2(0.515625, 0.515625)
+texture = ExtResource("4_bl8y8")
