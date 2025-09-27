@@ -4,4 +4,5 @@ extends Node2D
 
 func bgm_play():
 	audio_stream_player.stream = preload("res://Sounds/soundtrack_mono(1).wav")
+	audio_stream_player.loop = true 
 	audio_stream_player.play()
