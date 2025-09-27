@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://4jvih66khjds"]
+[gd_scene load_steps=31 format=4 uid="uid://4jvih66khjds"]
 
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_oxfjx"]
 [ext_resource type="Texture2D" uid="uid://v21mur71yxta" path="res://Images/brick_tile.png" id="2_f8d1k"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cj2peaw7o0axf" path="res://Images/New Piskel (2).png" id="9_7r0vn"]
 [ext_resource type="Texture2D" uid="uid://6w8vtml5srs7" path="res://Images/pressure_plate.png" id="9_b4ict"]
 [ext_resource type="Script" uid="uid://ccmug0l1aqvjm" path="res://Scripts/stage_0/plate_controller.gd" id="10_b4ict"]
+[ext_resource type="PackedScene" uid="uid://djw2h32dxyh10" path="res://Scenes/music_controller.tscn" id="14_2shdo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7r0vn"]
 
@@ -353,3 +354,5 @@ script = ExtResource("7_lt8ko")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-759, 499)
 shape = SubResource("RectangleShape2D_2shdo")
+
+[node name="MusicController" parent="." instance=ExtResource("14_2shdo")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://pc5xhl2npcmd"]
+[gd_scene load_steps=20 format=4 uid="uid://pc5xhl2npcmd"]
 
 [ext_resource type="Texture2D" uid="uid://cmg4y4hxlk4ma" path="res://Images/green.png" id="1_uxocw"]
 [ext_resource type="Texture2D" uid="uid://bgrkxiymtqw5s" path="res://Images/border.png" id="1_wxne6"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://t25m8qexmwui" path="res://Scenes/arrow.tscn" id="8_i2od2"]
 [ext_resource type="AudioStream" uid="uid://dtfspwhgfttqe" path="res://Sounds/soundtrack_mono(1).wav" id="9_5wu1i"]
 [ext_resource type="Script" uid="uid://c07sry4hi0ups" path="res://Scripts/stage_2/finish.gd" id="11_wjg4a"]
+[ext_resource type="PackedScene" uid="uid://djw2h32dxyh10" path="res://Scenes/music_controller.tscn" id="12_b16lr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhyr0"]
 texture = ExtResource("1_uxocw")
@@ -132,3 +133,5 @@ shape = SubResource("RectangleShape2D_uxocw")
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
+
+[node name="MusicController" parent="." instance=ExtResource("12_b16lr")]

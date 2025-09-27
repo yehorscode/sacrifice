@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://b7jr3pkcf34mq"]
+[gd_scene load_steps=22 format=4 uid="uid://b7jr3pkcf34mq"]
 
 [ext_resource type="Script" uid="uid://nhfbd6b5kkwr" path="res://Scripts/character_body_2d.gd" id="1_7tt7b"]
 [ext_resource type="Texture2D" uid="uid://bobtve1te8p4f" path="res://Images/Character/Right.png" id="2_e68fo"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bvg7bis4ktp3a" path="res://Scripts/stage_0/pressure_plate.gd" id="8_3pjs0"]
 [ext_resource type="Texture2D" uid="uid://6w8vtml5srs7" path="res://Images/pressure_plate.png" id="9_s5vsy"]
 [ext_resource type="Script" uid="uid://ccmug0l1aqvjm" path="res://Scripts/stage_0/plate_controller.gd" id="10_8hc4d"]
+[ext_resource type="PackedScene" uid="uid://djw2h32dxyh10" path="res://Scenes/music_controller.tscn" id="11_3pjs0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wt2ih"]
 texture = ExtResource("3_wt2ih")
@@ -226,3 +227,5 @@ shape = SubResource("RectangleShape2D_qgsfd")
 
 [node name="PlateController" type="Node" parent="."]
 script = ExtResource("10_8hc4d")
+
+[node name="MusicController" parent="." instance=ExtResource("11_3pjs0")]
