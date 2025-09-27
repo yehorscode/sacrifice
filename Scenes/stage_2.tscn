@@ -130,8 +130,10 @@ shape = SubResource("RectangleShape2D_uxocw")
 [node name="CanvasLayer" type="CanvasLayer" parent="finish"]
 
 [node name="ColorRect" type="ColorRect" parent="finish/CanvasLayer"]
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_left = 429.0
+offset_top = 180.0
+offset_right = 2349.0
+offset_bottom = 1260.0
 color = Color(0, 0, 0, 1)
 
 [node name="MusicController" parent="." instance=ExtResource("12_b16lr")]

@@ -18,26 +18,26 @@
 [ext_resource type="Script" uid="uid://byv7oyoqeeebm" path="res://Scripts/finish_0.gd" id="16_ih5ye"]
 [ext_resource type="PackedScene" uid="uid://djw2h32dxyh10" path="res://Scenes/music_controller.tscn" id="17_eqg2b"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7r0vn"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eqg2b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hcmcm"]
 texture = ExtResource("1_ih5ye")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tx0tn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jwqfi"]
 texture = ExtResource("1_oxfjx")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rr34s"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h0mu7"]
 texture = ExtResource("2_f8d1k")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7r0vn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epkj5"]
 texture = ExtResource("3_vw4cj")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -46,14 +46,14 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 255
 physics_layer_0/collision_mask = 255
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_7r0vn")
-sources/1 = SubResource("TileSetAtlasSource_tx0tn")
-sources/2 = SubResource("TileSetAtlasSource_rr34s")
-sources/3 = SubResource("TileSetAtlasSource_7r0vn")
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_eqg2b")
+sources/1 = SubResource("TileSetAtlasSource_jwqfi")
+sources/2 = SubResource("TileSetAtlasSource_h0mu7")
+sources/3 = SubResource("TileSetAtlasSource_epkj5")
 sources/0 = SubResource("TileSetAtlasSource_hcmcm")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
-size = Vector2(77, 87.25)
+size = Vector2(64, 81)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ro56c"]
 friction = 26.4
@@ -142,7 +142,7 @@ scale = Vector2(3.79933, 3.79933)
 texture = ExtResource("6_rr34s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-3, 3)
+position = Vector2(-2, 3.5)
 shape = SubResource("RectangleShape2D_epypp")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -363,7 +363,7 @@ texture_filter = 1
 position = Vector2(-752, 487)
 scale = Vector2(2.6875, 2.6875)
 sprite_frames = SubResource("SpriteFrames_rr34s")
-frame_progress = 0.90185463
+frame_progress = 0.30598915
 script = ExtResource("7_lt8ko")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
