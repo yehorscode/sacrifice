@@ -123,6 +123,8 @@ tile_set = SubResource("TileSet_sfwwm")
 [node name="Player" type="CharacterBody2D" parent="."]
 disable_mode = 2
 script = ExtResource("4_j221e")
+grid_size = null
+move_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture_filter = 1
