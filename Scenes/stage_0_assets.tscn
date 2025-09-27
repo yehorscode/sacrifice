@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://damowd11qhhi8"]
+[gd_scene load_steps=6 format=3 uid="uid://biq3foop4pvt"]
 
-[ext_resource type="Script" uid="uid://qobivxw3d6of" path="res://Scripts/stage_0/area_2d.gd" id="1_skfmt"]
+[ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scenes/crate.gd" id="1_77l3o"]
 [ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="2_77l3o"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_77l3o"]
@@ -28,7 +28,8 @@ size = Vector2(32, 32)
 [node name="Crate" type="RigidBody2D" parent="."]
 texture_filter = 1
 physics_material_override = SubResource("PhysicsMaterial_77l3o")
-script = ExtResource("1_skfmt")
+lock_rotation = true
+script = ExtResource("1_77l3o")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crate"]
 texture = ExtResource("2_77l3o")
