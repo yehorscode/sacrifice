@@ -38,8 +38,8 @@ physics_layer_0/collision_layer = 255
 physics_layer_0/collision_mask = 255
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_7r0vn")
 sources/1 = SubResource("TileSetAtlasSource_tx0tn")
-sources/2 = SubResource("TileSetAtlasSource_wjtap")
-sources/3 = SubResource("TileSetAtlasSource_v7gqg")
+sources/2 = SubResource("TileSetAtlasSource_rr34s")
+sources/3 = SubResource("TileSetAtlasSource_7r0vn")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(77, 87.25)
