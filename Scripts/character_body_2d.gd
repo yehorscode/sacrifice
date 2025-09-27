@@ -43,8 +43,6 @@ func handle_input():
 	elif Input.is_action_pressed("D_Right"):
 		dir_x = Vector2.RIGHT
 		sprite.texture = sprite_right
-
-	
 	if Input.is_action_pressed("ui_home"):
 		move_speed = 1000
 	else:
