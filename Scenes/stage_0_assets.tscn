@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://biq3foop4pvt"]
+[gd_scene load_steps=12 format=3 uid="uid://biq3foop4pvt"]
 
 [ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scenes/crate.gd" id="1_77l3o"]
 [ext_resource type="Texture2D" uid="uid://m3mwodh6djjx" path="res://Images/crate.png" id="2_77l3o"]
@@ -24,34 +24,37 @@ func _process(delta: float) -> void:
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77l3o"]
 size = Vector2(32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7j5pf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw4cj"]
 atlas = ExtResource("3_qusok")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ro56c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7j5pf"]
 atlas = ExtResource("3_qusok")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b4ict"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro56c"]
 atlas = ExtResource("3_qusok")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bl8y8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qusok"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw4cj")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7j5pf")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ro56c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b4ict")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bl8y8"]
+size = Vector2(7.70958, 9.600369)
 
 [node name="Stage0Assets" type="Node2D"]
 
@@ -69,8 +72,16 @@ script = SubResource("GDScript_77l3o")
 shape = SubResource("RectangleShape2D_77l3o")
 debug_color = Color(0.629988, 0.5270903, 0.15832767, 0.41960785)
 
-[node name="torch" type="AnimatedSprite2D" parent="."]
+[node name="Torch" type="Area2D" parent="."]
+position = Vector2(141, 150)
+scale = Vector2(-7.5309916, 19.587217)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Torch"]
 texture_filter = 1
-position = Vector2(256, 260)
-sprite_frames = SubResource("SpriteFrames_bl8y8")
-frame_progress = 0.71696025
+scale = Vector2(1, 0.47247916)
+sprite_frames = SubResource("SpriteFrames_qusok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torch"]
+position = Vector2(-1.5934067, 2.323155)
+scale = Vector2(1.65344, 1.1781547)
+shape = SubResource("RectangleShape2D_bl8y8")
