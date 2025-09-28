@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://nhfbd6b5kkwr" path="res://Scripts/character_body_2d.gd" id="4_7j5pf"]
 [ext_resource type="Script" uid="uid://d0406pj5kbo8" path="res://Scripts/stage_0/crate.gd" id="6_f8d1k"]
 [ext_resource type="Texture2D" uid="uid://d1wcvyblnnqtd" path="res://Images/Character/Left.png" id="6_rr34s"]
-[ext_resource type="Script" uid="uid://vl5jdolnh7ar" path="res://Scenes/torch.gd" id="7_lt8ko"]
+[ext_resource type="Script" path="res://Scenes/torch.gd" id="7_lt8ko"]
 [ext_resource type="Texture2D" uid="uid://bmob314u7ce7r" path="res://Images/Torch.png" id="7_vw4cj"]
 [ext_resource type="Script" uid="uid://bvg7bis4ktp3a" path="res://Scripts/stage_0/pressure_plate.gd" id="8_ro56c"]
 [ext_resource type="Texture2D" uid="uid://dxmkoq2gfwoq1" path="res://Images/New Piskel (1).png" id="8_rr34s"]

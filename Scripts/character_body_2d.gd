@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var grid_size: int = 9
-@export var move_speed: float = 200
+@export var move_speed: float = 2000
 
 @onready var sprite = $Sprite2D
 
